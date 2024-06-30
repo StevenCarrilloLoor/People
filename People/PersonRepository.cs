@@ -51,6 +51,23 @@ public class PersonRepository
 
     }
 
+    public void UpdatePerson(Person person)
+    {
+        try
+        {
+            // enter this line
+            Init();
+            conn.Update(person);
+
+          
+        }
+        catch (Exception ex)
+        {
+            throw;
+        }
+
+    }
+
     public List<Person> GetAllPeople()
     {
         // TODO: Init then retrieve a list of Person objects from the database into a list
@@ -85,7 +102,7 @@ public class PersonRepository
         }
         return new Person();
     }
-    public  void DetachPerson(Person person)
+    public  void DeletePerson(Person person)
     {
         try
         {
